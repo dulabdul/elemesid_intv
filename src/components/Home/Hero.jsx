@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
+import CustomButton from '../Button';
 
 export default function Hero() {
   return (
@@ -18,11 +18,26 @@ export default function Hero() {
             lot of the food that we buy.
           </p>
           <div className='hero_description_button flex items-start py-7 gap-4'>
-            <div className='hero_description_button_sign_up bg-primary rounded-full w-auto px-[18px] py-[10px] text-white flex items-center justify-center shadow-[0_8px_32px_0_rgba(102,107,226,0.3)]'>
-              <a href='/'>Daftar Sekarang</a>
+            <div classNafme='hero_description_button_sign_up '>
+              <CustomButton
+                type='link'
+                href='/'
+                isExternal
+                isPrimary
+                isRoundedFull
+                isWidthAuto
+                isHover
+                className='px-[18px] py-[10px] text-white flex items-center justify-center shadow-[0_8px_32px_0_rgba(102,107,226,0.3)]'
+                target='_blank'>
+                Daftar Sekarang
+              </CustomButton>
             </div>
             <div className='hero_description_button_about_us bg-light rounded-full w-auto px-[18px] py-[10px] text-textDark flex items-center justify-center'>
-              <Link href={'/about'}>About Us</Link>
+              <CustomButton
+                type='link'
+                href={'/about'}>
+                About Us
+              </CustomButton>
             </div>
           </div>
         </div>

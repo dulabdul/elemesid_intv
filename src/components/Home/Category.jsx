@@ -6,6 +6,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Image from 'next/image';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import CustomButton from '../Button';
 
 const CustomRightArrow = ({ onClick, ...rest }) => {
   const {
@@ -13,11 +14,14 @@ const CustomRightArrow = ({ onClick, ...rest }) => {
     carouselState: { currentSlide, deviceType },
   } = rest;
   return (
-    <button
+    <CustomButton
       onClick={() => onClick()}
       type='button'
       aria-label='Go to next slide'
-      className='max-w-[115px] bottom-[-68%] right-[5%] absolute rounded-full  group bg-primary max-h-[50px] px-4 py-2 flex items-center justify-center'>
+      isPrimary
+      isHover
+      isRoundedFull
+      className='max-w-[115px] bottom-[-68%] right-[5%] absolute  group max-h-[50px] px-4 py-2 flex items-center justify-center'>
       <div className='flex items-center justify-center gap-x-1'>
         <span className='text-white text-base font-medium leading-[18px]'>
           NEXT
@@ -26,7 +30,7 @@ const CustomRightArrow = ({ onClick, ...rest }) => {
           <IoIosArrowForward className='text-primary text-2xl' />
         </div>
       </div>
-    </button>
+    </CustomButton>
   );
 };
 const CustomLeftArrow = ({ onClick, ...rest }) => {
@@ -35,11 +39,14 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
     carouselState: { currentSlide, deviceType },
   } = rest;
   return (
-    <button
+    <CustomButton
       onClick={() => onClick()}
       type='button'
+      isPrimary
+      isRoundedFull
+      isHover
       aria-label='Go to next slide'
-      className='max-w-[115px] rounded-full bottom-[-68%] right-[13%] absolute group bg-primary max-h-[50px] px-4 py-2 flex items-center justify-center'>
+      className='max-w-[115px] bottom-[-68%] right-[13%] absolute group max-h-[50px] px-4 py-2 flex items-center justify-center'>
       <div className='flex items-center justify-center gap-x-1'>
         <div className='rounded-full bg-white'>
           <IoIosArrowBack className='text-primary text-2xl' />
@@ -48,7 +55,7 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
           PREV
         </span>
       </div>
-    </button>
+    </CustomButton>
   );
 };
 export default function Category() {

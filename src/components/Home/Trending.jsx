@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Star from '../Star';
-import Link from 'next/link';
+import CustomButton from '../Button';
 
 export default function Trending() {
   const trendingData = [
@@ -104,13 +104,17 @@ export default function Trending() {
           );
         })}
       </div>
-      <Link
-        href={'/'}
-        className='hidden md:flex items-center justify-center '>
-        <div className='trending_button text-white font-medium text-lg text-center max-w-[160px] max-h-[50px]  bg-primary rounded-full px-5 py-3'>
+      <div className='flex justify-center'>
+        <CustomButton
+          href={'/'}
+          type='link'
+          isPrimary
+          isRoundedFull
+          isHover
+          className='hidden md:flex items-center justify-center text-white font-medium text-lg text-center max-w-[160px] max-h-[50px] px-5 py-3'>
           ALL Receipt
-        </div>
-      </Link>
+        </CustomButton>
+      </div>
     </div>
   );
 }
