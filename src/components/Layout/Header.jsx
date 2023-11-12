@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import CustomButton from '../Button';
 
 export default function Header() {
   return (
@@ -17,11 +18,25 @@ export default function Header() {
           </Link>
         </div>
         <div className='navbar_button_sign_up'>
-          <a
+          <CustomButton
+            type='link'
+            isExternal
+            target='_blank'
+            isRoundedFull
             href='/'
-            className='w-full px-4 py-3 rounded-full bg-primary text-white'>
+            className='hidden xl:inline w-full px-4 py-3 font-medium text-sm leading-6  text-textDark'>
+            Masuk
+          </CustomButton>
+          <CustomButton
+            href='/'
+            type='link'
+            isExternal
+            isPrimary
+            isRoundedFull
+            isHover
+            className='w-full px-4 py-3 text-white'>
             Daftar Sekarang
-          </a>
+          </CustomButton>
         </div>
       </nav>
     </header>
