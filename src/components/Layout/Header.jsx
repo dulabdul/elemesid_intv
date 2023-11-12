@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className='p-7 w-full '>
+    <header className='container mx-auto p-7 w-full '>
       <nav className='flex items-center flex-row justify-between navbar'>
         <div className='navbar_logo'>
           <Link href={'/'}>
